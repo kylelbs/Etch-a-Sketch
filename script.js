@@ -5,10 +5,11 @@ document.body.appendChild(grid);
 
 for (let i = 0; i < 16; i++) {
     divline = document.createElement("div");
-    divline.classList.add(`line${i}`);
+    divline.classList.add('divline');
     grid.appendChild(divline);
     for (let i = 0; i < 16; i++) {
-        subdiv = document.createElement("div");
-        divline.appendChild(subdiv);
+        divpixel = document.createElement("div");
+        divpixel.classList.add('divpixel')
+        divline.appendChild(divpixel);
     };
 };

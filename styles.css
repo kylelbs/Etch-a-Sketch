@@ -1,0 +1,10 @@
+.divline{
+    display: flex;
+}
+
+.divpixel{
+    height: 30px;
+    width: 30px;
+    background-color: powderblue;
+    margin: 10px;
+}
