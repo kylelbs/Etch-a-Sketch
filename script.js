@@ -18,5 +18,5 @@ let divpixels = document.querySelectorAll('.divpixel');
 divpixels.forEach(divpixel => {
     divpixel.addEventListener('mouseover', function (e) {
         e.target.style.backgroundColor = "red";
-    })
-})
+    });
+});
