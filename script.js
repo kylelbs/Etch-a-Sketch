@@ -1,6 +1,9 @@
 console.log("Hello");
 let grid = document.createElement("div");
 grid.classList.add("grid");
+
+// grid.setAttribute("style", "display:flex");
+grid.setAttribute("style", "height:480px;width:480px");
 document.body.appendChild(grid);
 
 let divline;
@@ -13,9 +16,10 @@ function createGrid(squrperside) {
 
         divwrapper = document.createElement("div");
         divwrapper.classList.add('divwrapper');
+
         divline.style.display = "flex";
-        // divline.style.flexDirection = "row";
         divwrapper.style.display = "flex";
+
         grid.appendChild(divline);
         divline.appendChild(divwrapper);
         for (let i = 0; i < squrperside; i++) {
@@ -51,8 +55,11 @@ divpixels.forEach(divpixel => {
 
 const gridsizebutton = document.querySelector("#gridsize");
 gridsizebutton.addEventListener('click', function () {
-    userSize = prompt("Please enter a number of squares per side for the new grid:");
+    userSize = prompt("Please enter a number of squares per side for the new grid (maximum 16):");
     // console.log(userSize);
+    while (userSize > 16) {
+        userSize = prompt("Please enter a number of squares per side for the new grid (maximum 16):");
+    };
     grid.innerHTML = "";
     createGrid(userSize);
     let divpixels = document.querySelectorAll('.divpixel');
